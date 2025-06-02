@@ -1,8 +1,4 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-  background-color: #f2f2f2;
-}
+/* Conteúdo que "já tava" 5 */
 
 header, footer {
   background-color: #333;
@@ -10,6 +6,55 @@ header, footer {
   padding: 15px;
   text-align: center;
 }
+
+/* ATIVIDADE 5 */
+
+body {
+    margin: 0; /* Remove a margem padrão */
+    padding: 10px; /* Adiciona espaçamento interno */
+}
+
+div {
+    border: 2px solid black; /* Borda preta de 2px */
+}
+
+button {
+    border: 2px solid blue;
+    border-radius: 10px; /* Cantos arredondados */
+}
+
+:root {
+    --cor-primaria: #3498db; /* Azul */
+    --cor-secundaria: #2ecc71; /* Verde */
+    --cor-fundo: #f4f4f4; /* Cinza claro */
+}
+
+:root {
+    --fonte-principal: 'Arial', sans-serif;
+    --tamanho-texto: 16px;
+}
+body {
+    font-family: var(--fonte-principal);
+    font-size: var(--tamanho-texto);
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+
+/*  =======> Conteúdo anterior que irei ignorar:  
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-primaria);
+}
+
 
 nav ul {
   list-style: none;
@@ -45,3 +90,5 @@ button {
   margin-right: 5px;
   padding: 5px 10px;
 }
+
+*/
