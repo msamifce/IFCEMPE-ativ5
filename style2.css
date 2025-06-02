@@ -1,94 +1,179 @@
-/* Conteúdo que "já tava" 5 */
-
-header, footer {
-  background-color: #333;
-  color: white;
-  padding: 15px;
-  text-align: center;
-}
-
-/* ATIVIDADE 5 */
-
-body {
-    margin: 0; /* Remove a margem padrão */
-    padding: 10px; /* Adiciona espaçamento interno */
-}
-
-div {
-    border: 2px solid black; /* Borda preta de 2px */
-}
-
-button {
-    border: 2px solid blue;
-    border-radius: 10px; /* Cantos arredondados */
-}
-
+/* Atividade 6: Variáveis CSS para Cores e Tipografia */
 :root {
-    --cor-primaria: #3498db; /* Azul */
-    --cor-secundaria: #2ecc71; /* Verde */
-    --cor-fundo: #f4f4f4; /* Cinza claro */
+    /* Cores personalizadas para o Layout 2 */
+    --cor-principal: #007bff; /* Azul vibrante */
+    --cor-secundaria: #6c757d; /* Cinza escuro */
+    --cor-fundo-geral: #f8f9fa; /* Cinza bem claro */
+    --cor-texto: #343a40; /* Texto quase preto */
+    --cor-header-footer-bg: #343a40; /* Fundo escuro para header/footer */
+    --cor-header-footer-text: #ffffff; /* Texto branco para header/footer */
+    --cor-link-nav: #ffffff; /* Link da navegação (branco) */
+    --cor-link-nav-hover: #0056b3; /* Link da navegação ao passar o mouse */
+    --cor-borda-card: #e2e6ea; /* Borda suave para cards */
+    --cor-card-bg: #ffffff; /* Fundo branco para cards */
+
+    /* Fontes personalizadas para o Layout 2 */
+    --fonte-corpo: 'Roboto', sans-serif; /* Uma fonte moderna para o corpo */
+    --fonte-titulo: 'Montserrat', sans-serif; /* Uma fonte bold para títulos */
+    --tamanho-base: 16px;
+    --tamanho-titulo1: 2.8em;
+    --tamanho-titulo2: 2em;
+    --tamanho-texto-card: 0.9em;
 }
 
-:root {
-    --fonte-principal: 'Arial', sans-serif;
-    --tamanho-texto: 16px;
-}
+/* Reset de margens e padding padrão para o corpo */
 body {
-    font-family: var(--fonte-principal);
-    font-size: var(--tamanho-texto);
+    margin: 0;
+    padding: 0;
+    font-family: var(--fonte-corpo);
+    font-size: var(--tamanho-base);
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo-geral);
+    line-height: 1.6;
 }
 
-h1 {
-    font-size: 24px;
-    font-weight: bold;
+/* Estilo para o Cabeçalho (Fixo no topo - Ponto 3 da Atividade) */
+header {
+    background-color: var(--cor-header-footer-bg);
+    color: var(--cor-header-footer-text);
+    padding: 15px 20px;
+    text-align: center;
+    position: fixed; /* Fixa o cabeçalho no topo da viewport */
+    width: 100%; /* Ocupa a largura total da tela */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra suave para profundidade */
 }
-p {
-    font-size: 14px;
-    line-height: 1.5;
+
+header h1 {
+    margin: 0;
+    font-family: var(--fonte-titulo);
+    font-size: var(--tamanho-titulo1);
+    color: var(--cor-header-footer-text);
 }
 
-
-
-/*  =======> Conteúdo anterior que irei ignorar:  
+/* Ajuste de padding no body para evitar que o conteúdo fique atrás do header fixo */
 body {
-    background-color: var(--cor-fundo);
-    color: var(--cor-primaria);
+    padding-top: 80px; /* Ajuste este valor se a altura do seu header for diferente */
 }
 
-
-nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin-right: 15px;
+/* Menu de Navegação - Layout Horizontal (Ponto 2 da Atividade) */
+nav {
+    margin-top: 10px;
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
+    color: var(--cor-link-nav);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    display: inline-block; /* Permite padding e margens e quebra de linha como texto */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
+nav a:hover {
+    background-color: var(--cor-link-nav-hover);
+    color: var(--cor-header-footer-text);
 }
 
-table, th, td {
-  border: 1px solid #ccc;
+/* Estilo para o Conteúdo Principal */
+main {
+    padding: 20px;
+    max-width: 1200px; /* Limita a largura do conteúdo para melhor leitura */
+    margin: 20px auto; /* Centraliza o main na página */
+    background-color: var(--cor-card-bg);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
-th, td {
-  padding: 10px;
-  text-align: left;
+main h2 {
+    font-family: var(--fonte-titulo);
+    font-size: var(--tamanho-titulo2);
+    color: var(--cor-principal);
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--cor-borda-card);
 }
 
-button {
-  margin-right: 5px;
-  padding: 5px 10px;
+/* Coleção de "Objetos Tema" em Múltiplas Colunas (Ponto 4 da Atividade) */
+.colecao-objetos {
+    display: grid; /* Usa CSS Grid para layout de colunas */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 2+ colunas responsivas */
+    gap: 25px; /* Espaço entre os cards */
+    padding: 20px; /* Padding interno da seção de coleção */
 }
 
+.card-objeto {
+    border: 1px solid var(--cor-borda-card);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--cor-card-bg);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card-objeto:hover {
+    transform: translateY(-8px); /* Efeito de elevação ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.card-objeto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.card-objeto h3 {
+    font-size: 1.5em;
+    color: var(--cor-principal);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: var(--fonte-titulo);
+}
+
+.card-objeto p {
+    font-size: var(--tamanho-texto-card);
+    color: var(--cor-secundaria);
+    margin-bottom: 0;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--cor-header-footer-bg);
+    color: var(--cor-header-footer-text);
+    text-align: center;
+    padding: 15px 20px;
+    margin-top: 40px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+
+footer a {
+    color: var(--cor-link-nav);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para um menu vertical (APENAS UM EXEMPLO, SE VOCÊ FOSSE CRIAR style3.css)
+   Para ter o menu vertical, você precisaria de um terceiro arquivo CSS (ex: style3.css)
+   e um index3.html que apontasse para ele.
+   
+   @media (max-width: 768px) {
+       nav ul {
+           flex-direction: column;
+           align-items: center;
+       }
+       nav ul li {
+           margin: 10px 0;
+           width: 90%;
+       }
+   }
 */
