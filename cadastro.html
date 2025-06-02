@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de produtos</title>
+</head>
+<body>
+
+<header>
+    <h1>CADASTRO</h1>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="detalhes.html">Detalhes</a> |
+        <a href="cadastro.html">Cadastro</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Cadastro de PRODUTOS</h2>
+
+    <form>
+        <label for="titulo">Produto:</label><br>
+        <input type="text" id="titulo" name="titulo"><br><br>
+
+        <label for="ano">Descrição:</label><br>
+        <input type="text" id="ano" name="ano"><br><br>
+
+        <label for="diretor">Valor:</label><br>
+        <input type="text" id="diretor" name="diretor"><br><br>
+
+        <label for="descricao">Detalhes:</label><br>
+        <textarea id="descricao" name="descricao"></textarea><br><br>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <h2>Produtos Cadastrados</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Descrição</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Serviço de manuteção</td>
+                <td>Foto processador representando serviço.</td>
+                <td>
+                    <button>Alterar</button>
+                    <button>Apagar</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Óculos de realidade virtual</td>
+                <td>Produto a venda</td>
+                <td>
+                    <button>Alterar</button>
+                    <button>Apagar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</main>
+
+</body>
+</html>
